@@ -89,14 +89,12 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE and maxRooms < 25:
                 maxRooms += 1
-            if event.key == pygame.K_z:
+            if event.key == pygame.K_z and maxRooms > 0:
                 maxRooms -= 1
             displayMap = getMap(maxRooms)
 
-    if maxRooms > 25:
-        maxRooms = 25
     #Draw game stuff
     screen.fill(DARK_BLUE)
     for r in range(len(displayMap)):
